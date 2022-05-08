@@ -13,20 +13,20 @@
 
     <!-- <h3 class="logo">logo here</h3> -->
 				<!-- <form [formGroup]="signG"> -->
-					<label for="chk" aria-hidden="true">Signin</label>
-          <input type="text" #name placeholder="Username" required="" formControlName="name" type="text">
-					<input type="email" #email placeholder="Email" required="" formControlName="Email" type="text">
-					<input type="password" #pswd placeholder="Password" required="" formControlName="Password" type="text">
-					<button (click)= "onSignin(email.value,pswd.value)">Sign up</button>
+					<label for="chk" aria-hidden="true">Signup</label>
+          <!-- <input type="text" #name placeholder="Username" > -->
+					<input type="text" #email placeholder="Email">
+					<input type="password" #pswd placeholder="Password">
+					<button (click)= "onSignup(email.value,pswd.value)">Sign up</button>
 				<!-- </form> -->
 			</div>
             <div class="signin">
-				 <form *ngIf="!isSignedIn"> 
+				 <!-- <div *ngIf="!isSignedIn">  -->
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" #email placeholder="Email" required=""  type="text">
-					<input type="password" #pswd placeholder="Password" required=""  type="text">
+					<input type="text" #email placeholder="Email" >
+					<input type="password" #pswd placeholder="Password">
 					<button (click) ="onSignin(email.value,pswd.value)" >Login</button>
-				</form> 
+         </div> 
         <script>
              if (isSignedIn)
                    console.log("logged in")
@@ -35,6 +35,6 @@
 			</div>
 
 
-	</div>
+	<!-- </div> -->
 </body>
 </html>
