@@ -23,15 +23,15 @@
             <div class="signin">
 				 <!-- <div *ngIf="!isSignedIn">  -->
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="text" #email placeholder="Email" >
-					<input type="password" #pswd placeholder="Password">
-					<button (click) ="onSignin(email.value,pswd.value)" >Login</button>
+					<input type="text" #emaill placeholder="Email" >
+					<input type="password" #pswdd placeholder="Password">
+					<button (click) ="onSignin(emaill.value,pswdd.value)" >Login</button>
          </div> 
-        <script>
+      <!--  <script>
              if (isSignedIn)
                    console.log("logged in")
-        </script>
-        <!-- <app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"> </app-home>  -->
+        </script> -->
+         <app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"> </app-home>  
 			</div>
 
 
