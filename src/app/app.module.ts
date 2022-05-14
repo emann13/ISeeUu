@@ -5,17 +5,24 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FirebaseService } from './services/firebase.service';
-
+import { AppRoutingModule } from './app-routing.module';
+import { VitalsComponent } from './vitals/vitals.component';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
-    AppComponent
-   // HomeComponent
+       AppComponent,
+    HomeComponent,
+    VitalsComponent,
+    NavbarComponent
+
   ],
 
   imports: [
     BrowserModule,
+    AppRoutingModule,
+  
     AngularFireModule.initializeApp({
-    apiKey: "AIzaSyBoTOIr3Gqh6EcYsXhjWv31KeefL1KKTBQ",
+  apiKey: "AIzaSyBoTOIr3Gqh6EcYsXhjWv31KeefL1KKTBQ",
   authDomain: "iseeu-81908.firebaseapp.com",
   projectId: "iseeu-81908",
   storageBucket: "iseeu-81908.appspot.com",

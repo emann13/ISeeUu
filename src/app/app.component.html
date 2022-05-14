@@ -1,40 +1,10 @@
-<html>
-<head>
-	<title>IseeU</title>
-	<link rel="stylesheet" type="text/css" href="app.component.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
+<div class="nav">
 
-	<div class="main">
-		<input type="checkbox" id="chk" aria-hidden="true">
-
-			<div class="signup">
-
-    <!-- <h3 class="logo">logo here</h3> -->
-				<!-- <form [formGroup]="signG"> -->
-					<label for="chk" aria-hidden="true">Signup</label>
-          <!-- <input type="text" #name placeholder="Username" > -->
-					<input type="text" #email placeholder="Email">
-					<input type="password" #pswd placeholder="Password">
-					<button (click)= "onSignup(email.value,pswd.value)">Sign up</button>
-				<!-- </form> -->
-			</div>
-            <div class="signin">
-				 <!-- <div *ngIf="!isSignedIn">  -->
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="text" #emaill placeholder="Email" >
-					<input type="password" #pswdd placeholder="Password">
-					<button (click) ="onSignin(emaill.value,pswdd.value)" >Login</button>
-         </div> 
-      <!--  <script>
-             if (isSignedIn)
-                   console.log("logged in")
-        </script> -->
-         <app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"> </app-home>  
-			</div>
-
-
-	<!-- </div> -->
-</body>
-</html>
+	<app-navbar></app-navbar>
+  
+  </div>
+  <!-- dynamic -->
+  <div>
+	<router-outlet></router-outlet>
+  
+  </div>
