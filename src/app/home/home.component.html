@@ -1,62 +1,47 @@
 <html>
 <head>
 	<title>IseeU</title>
-	<link rel="stylesheet" type="text/css" href="home.component.css">
+	<link rel="stylesheet" type="text/css" href="./home.component.html">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
-<div class="header">
-  <!-- <h1>Header</h1> -->
-  <p>Please fill the needed vitals</p>
-</div>
 <body>
 
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+
     <!-- <h3 class="logo">logo here</h3> -->
-    
-				<form>
-          <div class="cat">
-          <label for="HR">HeartRate</label>
-					<input type="HeartRate" name="HR" placeholder="heart rate" required=""  formControlName="HeartRate" type="text">
-                    <label for="RR">RespiratoryRate</label>
-					<input type="RespiratoryRate" name="RR" placeholder="respirtory rate" required="" formControlName="RespirtoryRate" type="text">
-                    <label for="bp">Blood Pressure</label>
-					<input type="Blood Pressure" name="bp" placeholder="blood pressure" required="" formControlName="bloodPressure" type="text">
-                    <label for="SPO2">Oxygen Saturation</label>
-          <input type="Oxygen Saturation" name="SPO2" placeholder="oxygen saturation" required="" formControlName="oxygen saturation" type="text">
-          <label for="cs">Consciousness</label>
-          <input type="consciousness" name="cs" placeholder="consciousness" required="" formControlName="consciousness" type="text">
-          <label for="tp">Temperature</label>
-          <input type="temperature" name="tp" placeholder="temperature" required="" formControlName="temperature" type="text">
-          <label for="age">Age</label>
-          <input type="age" name="age" placeholder="age" required="" formControlName="age" type="text">
-          <label for="b">Burns</label>
-          <input type="burns" name="b" placeholder="burns" required="" formControlName="temperature" type="text">        
-        </div>  
-        <!-- </form> -->
-        
-          <div id="list1" class="dropdown-check-list" tabindex="100">
-            <span class="anchor">Other Symptoms</span>
-            <ul class="items">
-              <li><input type="checkbox" />Chronic Cough </li>
-              <li><input type="checkbox" />Weakness</li>
-              <li><input type="checkbox" />Nausea </li>
-              <li><input type="checkbox" />Fatigue </li>
-    
-            </ul>
-          </div>
-          <script type="text/javascript">
-            var checkList = document.getElementById('list1');
-   if (checkList instanceof HTMLElement) {
-    checkList.click();
-  }
-checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
-if (checkList.classList.contains('visible'))
-  checkList.classList.remove('visible');
-else
-  checkList.classList.add('visible');
-}
-        </script>
-					<button>Submit</button>
-		</form>		
-        
+				<!-- <form [formGroup]="signG"> -->
+					<label for="chk" aria-hidden="true">Signup</label>
+          <!-- <input type="text" #name placeholder="Username" > -->
+					<input type="text" #email placeholder="Email">
+					<input type="password" #pswd placeholder="Password">
+					<button (click)= "onSignup(email.value,pswd.value)">Sign up</button>
+				<!-- </form> -->
+			</div>
+            <div class="signin">
+				 <!-- <div *ngIf="!isSignedIn">  -->
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="text" #emaill placeholder="Email" >
+					<input type="password" #pswdd placeholder="Password">
+					<button (click) ="onSignin(emaill.value,pswdd.value)" >Login</button>
+					
+
+         </div> 
+      <!--  <script>
+             if (isSignedIn)
+                   console.log("logged in")
+        </script> -->
+		<!-- <script>
+			if (isSignedIn)goToHome()
+		
+		</script> -->
+         <!-- <app-home *ngIf="isSignedIn" (isLogout)="handleLogout()"> </app-home>   -->
+			</div>
+
+
+	<!-- </div> -->
 </body>
 </html>
+<!-- <router-outlet> </router-outlet -->
