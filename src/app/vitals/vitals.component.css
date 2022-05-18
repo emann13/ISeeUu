@@ -6,6 +6,7 @@ dropdown-check-list {
     display: block;    
   }
   
+  
   .dropdown-check-list .anchor {
     position: relative;
     cursor: pointer;
@@ -66,7 +67,7 @@ dropdown-check-list {
   align-items: center; 
   min-height: 100vh;
   font-family: 'Jost', sans-serif;  
-  background: linear-gradient(to bottom, #a56ab4, #6c4d79, #15011e);
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   }
   label{
   color: #fff;
@@ -118,19 +119,31 @@ dropdown-check-list {
       align-items: center; 
       min-height: 100vh;
       font-family: 'Jost', sans-serif;  
-      background: linear-gradient(to bottom, #a56ab4, #6c4d79, #15011e);
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   }
   label{
       color: #fff;
       font-size: 1.1em;
-      /* justify-content: center; */
+       justify-content: center; 
       display: flex;
       margin: 10px;
       font-weight: normal;
   }
-  
+  input{
+    width: 40%;
+    height: 35px;
+    border: none;
+    padding: 10px;
+    margin-left: 30%;
+    border-radius: 3px;
+    background-color:white;
+  }
+  input:hover{
+    background-color:#bfc0e7;
+    transition: 0.3s ease-in-out;
+  }
   button{
-      width: 60%;
+      width: 20%;
       height: 40px;
       margin: 10px auto;
       justify-content: center;
@@ -139,16 +152,16 @@ dropdown-check-list {
       background: #573b8a;
       font-size: 1em;
       font-weight: bold;
-      margin-top: 20px;
+      margin-top: 40px;
       outline: none;
       border: none;
       border-radius: 5px;
       transition: .2s ease-in;
       cursor: pointer;
-    margin-bottom: 30px;
+      margin-bottom: 30px;
   }
   button:hover{
-      background: #6d44b8;
+      background: #512f91;
   }
   
   .header {
@@ -164,4 +177,36 @@ dropdown-check-list {
   .n{
     margin-right: 20px;
   }
-  
+  .form_div{
+    margin: auto;
+    width: 40%;
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0 15px 40px black;
+    justify-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  }
+  ::placeholder { 
+    color:#010039;
+    opacity: 1; 
+  }
+  .xy{
+    display: inline-block;
+  }
+  .lap{
+    margin-left: 0;
+  }
+  .check_div{
+    font-size: 15px;
+    width: 100%;
+    margin:40px auto 0px 0px;
+  }
+  .check_semi_div{
+    width: 40%;
+    display: inline-block;
+  }
+  .container{
+    margin-left: 0%;
+  }
