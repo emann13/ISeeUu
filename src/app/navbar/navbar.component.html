@@ -13,25 +13,25 @@
     <div class="body" hieght="90%" weidth="90%">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-          <a style="padding-left:10px" class="navbar-brand" routerLink="/"   >
-            <img  src="ISEEU.png"  class ="rounded-circle" alt ="ISEEU"  height="160px" width="180px">
+          <a style="padding-left:10px" class="navbar-brand" routerLink="home"   >
+            <!-- <img  src="ISEEU.png"  class ="rounded-circle" alt ="ISEEU"  height="160px" width="180px"> -->
       
               </a>
-              <a style="padding-left:50px"  class="navbar-brand" routerLink="/" ><h2 style="color: blueviolet;">I See U</h2></a>
+              <a style="padding-left:50px"  class="navbar-brand" routerLink="home" ><h2 style="color: rgb(251, 250, 251);">I See U</h2></a>
           <button (click) = "toggle()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
       
           <div class="collapse navbar-collapse" [class.show] = "isOpen" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto" >
-              <li  style="padding-left:50px" class="nav-item active">
-                <a  class="nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" > <h5>Home</h5></a>
+              <li  style="padding-left:50px" class="nav-item active"  >
+                <a  class="nav-link" routerLink="home"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" > <h5>Home</h5></a>
               </li>
-              <li style="padding-left:50px" class="nav-item">
+              <li style="padding-left:50px" class="nav-item" *ngIf="isUser">
                 <a  class="nav-link" routerLink="home" routerLinkActive="active" ><h5>Login</h5></a>
               </li>
-              <li style="padding-left:50px" class="nav-item">
-                <button  class="btn btn-danger" routerLink="logout" routerLinkActive="active" ><h5>Logout</h5> </button>
+              <li style="padding-left:50px" class="nav-item" *ngIf="!isUser">
+                <button  class="btn btn-danger" routerLink="home" routerLinkActive="active" ><h5>Logout</h5> </button>
               </li>
       
             </ul>
