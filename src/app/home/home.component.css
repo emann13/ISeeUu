@@ -89,6 +89,3 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
-row{
-  margin-right: 20px;
-}
