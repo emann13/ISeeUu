@@ -1,35 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//import {AngularFireModule} from '@angular/fire'
-import {AngularFireModule} from '@angular/fire/compat';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { FirebaseService } from './services/firebase.service';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
-import { VitalsComponent } from './vitals/vitals.component';
+import { AppComponent } from './app.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AmbulanceComponent } from './ambulance/ambulance.component';
+import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { VitalsComponent } from './vitals/vitals.component';
+import { RouterModule } from '@angular/router';
+import { FirebaseService } from './service/firebase.service';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+
+const routes = [
+  {path :'home', component : HomeComponent },
+  {path :'vitals', component : VitalsComponent },
+  {path :'ambulance', component : AmbulanceComponent },
+
+
+];
 @NgModule({
   declarations: [
-       AppComponent,
+    AppComponent,
+    AmbulanceComponent,
     HomeComponent,
-    VitalsComponent,
-    NavbarComponent
-
+    NavbarComponent,
+    VitalsComponent
   ],
-
   imports: [
-    BrowserModule,
+    BrowserModule,  
     AppRoutingModule,
-  
-    AngularFireModule.initializeApp({
-  apiKey: "AIzaSyBoTOIr3Gqh6EcYsXhjWv31KeefL1KKTBQ",
-  authDomain: "iseeu-81908.firebaseapp.com",
-  projectId: "iseeu-81908",
-  storageBucket: "iseeu-81908.appspot.com",
-  messagingSenderId: "770618320078",
-  appId: "1:770618320078:web:234f17b4468f9d20125c9f",
-  measurementId: "G-X5CGJLTZ5P"
-    })
+    RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
